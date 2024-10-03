@@ -13,6 +13,10 @@ Pull the code from the repo and add a .env file which should contains API key fo
 ```bash
 npm install
 ```
+To start the app in development run 
+```bash
+npm run dev
+```
 ## How To Use It <a name="howtouse"></a>
 There are two main functions of the app, user can enter a value to convert to different currency
 Users can also click on any currency to see a line chart showing its value in the last 14 days.
