@@ -1,40 +1,49 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Table of Contents
+- Goal[#goal]
+- Installation[#installation]
+- How To Use It[#howtouse]
+- Full Capabilities[#fc] 
+- Screenshots[#sc]
 
-## Getting Started
+## Goal <a name="goal"></a>
+The app was an attempt to make a tool to convert currency
 
-First, run the development server:
-
+## Installation <a name="installation"></a>
+Pull the code from the repo and add a .env file which should contains API key for the currency API then do
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
+## How To Use It <a name="howtouse"></a>
+There are two main functions of the app, user can enter a value to convert to different currency
+Users can also click on any currency to see a line chart showing its value in the last 14 days.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Full Capabilities <a name="fc"></a>
+When converting any amount into others currency, only 5 results were shown. However, to view more currency, removing the slice in rateProccessor into 
+```bash
+return Object.entries(rates).map ...
+```
+## Screenshots <a name="sc"></a>
+The application worked on all devices. However, the screenshots will focus on laptop, ipad, iphone views.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Converting (Laptop)
+![ConvertLaptop](/public/laptopConvert.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Converting (Ipad)
+![ConvertIpad](/public/ipadConvert.png)
 
-## Learn More
+Converting (Iphone)
+![ConvertIphone](/public/iphoneConvert.png)
 
-To learn more about Next.js, take a look at the following resources:
+History Rate Chart (Laptop)
+![RateHisLaptop](/public/laptopRateHis.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+History Rate Chart (Ipad)
+![RateHisIpad](/public/ipadRateHis.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+History Rate Chart (Iphone)
+![RateHisIphone](/public/iphoneRateHis.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# nextjs-currency-converter
->>>>>>> 496c526 (Initial commit)
+
+

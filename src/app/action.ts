@@ -2,8 +2,10 @@
 
 import axios from 'axios';
 
-import { formSchema, formSchemaType } from "@/validation/form-validation";
 import rateProcessor from '@/lib/rate-processor';
+import dateProcessor from '@/lib/date-processor';
+
+import { formSchema, formSchemaType } from '@/validation/form-validation';
 
 export default async function getConvertedAmount(data: formSchemaType) {
     const validatedFields = formSchema.safeParse(data);
@@ -15,10 +17,9 @@ export default async function getConvertedAmount(data: formSchemaType) {
     const { amount } = validatedFields.data;
 
     try {
-        const today = new Date();
-        const formattedDate = today.toLocaleDateString('en-CA', { year: 'numeric', month: 'numeric', day: 'numeric' });
+        const { endDate } = dateProcessor();
 
-        const response = await axios.get(`https://openexchangerates.org/api/historical/${formattedDate}.json?base=AUD&app_id=${process.env.NEXT_PUBLIC_OPEN_EXCHANGE_API_KEY}`);
+        const response = await axios.get(`https://openexchangerates.org/api/historical/${endDate}.json?base=AUD&app_id=${process.env.NEXT_PUBLIC_OPEN_EXCHANGE_API_KEY}`);
 
         return {
             message: 'Successfully exchanged amount!',
